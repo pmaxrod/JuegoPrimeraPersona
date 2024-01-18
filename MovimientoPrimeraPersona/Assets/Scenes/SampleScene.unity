@@ -459,6 +459,7 @@ GameObject:
   - component: {fileID: 1370635864}
   - component: {fileID: 1370635863}
   - component: {fileID: 1370635866}
+  - component: {fileID: 1370635868}
   - component: {fileID: 1370635867}
   m_Layer: 0
   m_Name: Jugador
@@ -592,14 +593,76 @@ MonoBehaviour:
   m_GameObject: {fileID: 1370635861}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55e143256fa651d4cab4104f99e28c5f, type: 3}
+  m_Script: {fileID: 11500000, guid: f8159b694ccf0434e8e4004f1ad67fc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 5
-  fuerzaSalto: 5
-  sensibilidadRaton: 1
+  sensibilidadRaton: 0.1
   maxVistaX: 20
   minVistaX: 0
+  camara: {fileID: 963194228}
+  velocidadMovimiento: 5
+--- !u!114 &1370635868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370635861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 84de28e3d7aa36247876a42ef50412ab, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1370635867}
+        m_TargetAssemblyTypeName: ControlJugador1, Assembly-CSharp
+        m_MethodName: OnMovimientoInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d6bfe2b5-fc48-44e5-b26f-c3d9863ab7e7
+    m_ActionName: Principal/Movimiento[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1370635867}
+        m_TargetAssemblyTypeName: ControlJugador1, Assembly-CSharp
+        m_MethodName: OnVistaInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3101b3ea-6518-4ced-8688-72b6b70c6690
+    m_ActionName: Principal/Mirar[/Mouse/delta]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Principal
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
