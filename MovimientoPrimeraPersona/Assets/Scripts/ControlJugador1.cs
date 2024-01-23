@@ -16,6 +16,7 @@ public class ControlJugador1 : MonoBehaviour
 
     [Header("Movimiento")]
     public float velocidadMovimiento;
+    public float fuerzaSalto;
     private Vector2 movimientoActualEntrada;
     private Rigidbody fisica;
 
@@ -28,6 +29,10 @@ public class ControlJugador1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetButtonDown("Jump"))
+        {
+            Salto();
+        }
 
     }
     private void LateUpdate()
@@ -76,5 +81,15 @@ public class ControlJugador1 : MonoBehaviour
         direccion.y = fisica.velocity.y;
         fisica.velocity = direccion;
     }
+
+    private void Salto()
+    {
+        Ray rayo = new Ray(transform.position, Vector3.down);
+        if (Physics.Raycast(rayo, 1.0f))
+        {
+            fisica.AddForce(Vector3.up * fuerzaSalto, ForceMode.Impulse);
+        }
+    }
+
 
 }
