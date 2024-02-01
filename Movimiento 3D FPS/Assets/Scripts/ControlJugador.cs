@@ -17,6 +17,7 @@ public class ControlJugador : MonoBehaviour
     [Header("Movimiento")]
     public float velocidadMovimiento;
     public float fuerzaSalto;
+    public bool estaSuelo = true;
     private Vector2 movimientoActualEntrada;
     private Rigidbody fisica;
 
@@ -88,13 +89,25 @@ public class ControlJugador : MonoBehaviour
 
     private void Salto()
     {
-        Ray rayo = new Ray(transform.position, Vector3.down);
-
-        if (Physics.Raycast(rayo, 1.0f))
+        if (estaSuelo)
         {
             fisica.AddForce(Vector3.up * fuerzaSalto, ForceMode.Impulse);
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Suelo") || collision.gameObject.CompareTag("Rampa"))
+        {
+            estaSuelo = true;
+        }
+    }
 
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Suelo") || collision.gameObject.CompareTag("Rampa"))
+        {
+            estaSuelo = false;
+        }
+    }
 }

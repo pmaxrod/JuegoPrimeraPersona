@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 1497429162503502702}
   - component: {fileID: 4464168992107520308}
   m_Layer: 0
-  m_Name: Rampa
-  m_TagString: Untagged
+  m_Name: Rampa_Plana
+  m_TagString: Rampa
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
