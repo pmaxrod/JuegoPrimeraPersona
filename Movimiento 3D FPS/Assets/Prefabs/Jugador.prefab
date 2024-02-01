@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2f8a8e249a27a03428644e492702e4cb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -233,7 +233,7 @@ MonoBehaviour:
   minVistaX: 0
   camara: {fileID: 2307259586078495728}
   velocidadMovimiento: 5
-  fuerzaSalto: 5
+  fuerzaSalto: 3
 --- !u!1 &6010625092903938527
 GameObject:
   m_ObjectHideFlags: 0
